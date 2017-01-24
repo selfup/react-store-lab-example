@@ -7,17 +7,12 @@ class ReactStoreLab extends React.Component {
     super(props)
     this.state = {...this.props.appState} || {};
     this.dispatch = (action, data) => {
-      const newMergeData = this.props.appActions[action](this.state, data);
-      if (typeof newMergeData !== 'object') throw Error(STORE_LAB_ERROR);
-      this.setState(Object.assign(this.state, newMergeData))
+      /* we gonna code this part! */
     }
   }
 
   injectProps() {
-    return React.cloneElement(this.props.children, {
-      dispatch: this.dispatch,
-      state: this.state
-    });
+    /* we gonna code this part too! */
   }
 
   render() {
