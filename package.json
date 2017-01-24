@@ -1,7 +1,6 @@
 {
-  "name": "bens-redux",
+  "name": "react-store-lab-example",
   "version": "0.1.0",
-  "private": true,
   "devDependencies": {
     "react-scripts": "0.7.0"
   },

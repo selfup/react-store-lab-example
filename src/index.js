@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PureFlux from './PureFlux';
+import ReactStoreLab from './ReactStoreLab';
 import App from './App';
 
 const appState = {
@@ -19,11 +19,11 @@ const appActions = {
 };
 
 ReactDOM.render(
-  <PureFlux
+  <ReactStoreLab
     appState={appState}
     appActions={appActions}
   >
     <App />
-  </PureFlux>,
+  </ReactStoreLab>,
   document.getElementById('root')
 );
