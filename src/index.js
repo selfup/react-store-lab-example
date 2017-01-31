@@ -1,29 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactStoreLab from './ReactStoreLab';
+/* eslint-disable no-undef */
+
+import Store from './store';
 import App from './App';
 
-const appState = {
-  msg: 'wow',
+const app = document.querySelector('#app');
+
+const state = {
+  message: new Date().getTime(),
 };
 
-const appActions = {
-  OK(state, options) {
-    return options;
-  },
-  OKOKOK() {
+const actions = {
+  MODIFY() {
     return {
-      msg: 'okokok',
+      message: new Date().getTime(),
     };
   },
 };
 
-ReactDOM.render(
-  <ReactStoreLab
-    appState={appState}
-    appActions={appActions}
-  >
-    <App />
-  </ReactStoreLab>,
-  document.getElementById('root')
-);
+const render = (store) => {
+  app.innerHTML = `<div>${App(store)}</div>`;
+};
+
+const store = new Store(state, actions, render);
+
+render(store);
