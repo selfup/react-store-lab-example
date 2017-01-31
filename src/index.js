@@ -1,26 +1,18 @@
-/* eslint-disable no-undef */
+/* global document, window */
 
 import Store from './store';
 import App from './App';
+import state from './state';
+import actions from './actions';
 
-const app = document.querySelector('#app');
-
-const state = {
-  message: new Date().getTime(),
-};
-
-const actions = {
-  MODIFY() {
-    return {
-      message: new Date().getTime(),
-    };
-  },
-};
+const app = document.querySelector('#root');
 
 const render = (store) => {
-  app.innerHTML = `<div>${App(store)}</div>`;
+  app.innerHTML = App(store);
 };
 
 const store = new Store(state, actions, render);
+
+window.dispatch = store.dispatch;
 
 render(store);

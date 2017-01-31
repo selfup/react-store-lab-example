@@ -1,3 +1,5 @@
+/* global dispatch */
+
 const App = ({ state }) => {
   const { message } = state;
 
@@ -5,7 +7,7 @@ const App = ({ state }) => {
     <div>
       <h1> ${message} </h1>
       <button
-        onclick='store.dispatch("MODIFY")'
+        onclick='dispatch("MODIFY")'
       >
         Change Number
       </button>
